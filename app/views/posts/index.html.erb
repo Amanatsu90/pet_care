@@ -5,6 +5,11 @@
   </div>
   
   <div class="side-menu">
+    <div class="link-post">
+    <% if user_signed_in?%>
+      <%= button_to '記事を投稿する', new_post_path, method: :get %>
+    <% end %>
+    </div>
   </div>
 </div>
 

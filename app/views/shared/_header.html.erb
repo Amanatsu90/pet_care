@@ -1,5 +1,7 @@
 <header class="header">
-  <div class="user_state">ロゴ</div>
+  <div class="icon">
+    <%= link_to 'ロゴ', "/", class: "icon" %>
+  </div>
   <div class="user_state">
     <ul class="state_lists">
       <% if user_signed_in? %>

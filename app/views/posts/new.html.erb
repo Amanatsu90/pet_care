@@ -1,0 +1,14 @@
+<%= render "shared/header" %>
+
+<div class="post-form">
+  <%= form_with(model: @post, local: true) do |f| %>
+  <div class="form-box">
+    投稿する
+    <%= f.text_field :title, placeholder: "タイトル", class: "article-title" %>
+    <%= f.text_area :text, placeholder: "本文", class: "article-text" %>
+    <%= f.collection_select(:theme_id, Theme.all, :id, :name, {}, {class: "article-theme"}) %>
+    <%= f.radio_button :dog_size_id, 1 %>小型犬　<%= f.radio_button :dog_size_id, 2 %>中型犬　<%= f.radio_button :dog_size_id, 3 %>大型犬　　
+    <%= f.submit "投稿する", class: "post-btn" %>
+  </div>
+  <% end %>
+</div>
