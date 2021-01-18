@@ -22,7 +22,7 @@
 | title        | string     | null: false                    | 
 | text         | text       | null: false                    | 
 | dog_size_id  | integer    | null: false                    | 
-| theme_tag_id | integer    | null: false                    | 
+| theme_id     | integer    | null: false                    | 
 | user         | references | null: false, foreign_key: true | 
 
 ### Association

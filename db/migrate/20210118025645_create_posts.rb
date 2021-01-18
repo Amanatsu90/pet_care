@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string  :title,        null: false
       t.text    :text,         null: false
       t.integer :dog_size_id,  null: false
-      t.integer :theme_tag_id, null: false
+      t.integer :theme_id,     null: false
       t.references :user, foreign_key: true
 
       t.timestamps

@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_01_18_025645) do
     t.string "title", null: false
     t.text "text", null: false
     t.integer "dog_size_id", null: false
-    t.integer "theme_tag_id", null: false
+    t.integer "theme_id", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
