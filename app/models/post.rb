@@ -9,5 +9,5 @@ class Post < ApplicationRecord
     validates :text
   end
 
-  validates :theme_id, numericality: { other_than: 0 } 
+  validates :theme_id, numericality: { other_than: 0, message: 'を選択してください' } 
 end

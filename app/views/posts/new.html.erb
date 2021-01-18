@@ -4,6 +4,8 @@
   <%= form_with(model: @post, local: true) do |f| %>
   <div class="form-box">
     投稿する
+    <%= render 'shared/error_messages', model: f.object %>
+    
     <%= f.text_field :title, placeholder: "タイトル", class: "article-title" %>
     <%= f.text_area :text, placeholder: "本文", class: "article-text" %>
     <%= f.collection_select(:theme_id, Theme.all, :id, :name, {}, {class: "article-theme"}) %>
