@@ -2,6 +2,12 @@
 
 <div class="main">
   <div class="article-lists">
+    <% @posts.each do |post| %>
+      <div class="article">
+        <div class="article-title"><%= post.title %></div>
+        <div><%= post.text %></div>
+      </div>
+    <% end %>
   </div>
   
   <div class="side-menu">

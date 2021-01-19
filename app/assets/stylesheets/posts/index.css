@@ -1,6 +1,7 @@
 .main {
   display: flex;
 }
+
 .article-lists {
   background-color:bisque;
   width: calc(100vw - 300px);
