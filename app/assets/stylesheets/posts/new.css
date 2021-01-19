@@ -1,0 +1,12 @@
+.form-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.article-title,
+.article-text,
+.article-theme,
+.post-btn {
+  margin: 10px;
+}
