@@ -8,6 +8,9 @@
         <div class="article">
           <div class="article-title"><%= post.title %></div>
           <div><%= post.text %></div>
+          <div>
+          <%= link_to '詳細', post_path(post.id) %>
+          </div>
         </div>
       <% end %>
     </div>

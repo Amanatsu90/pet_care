@@ -8,6 +8,7 @@ class Post < ApplicationRecord
   with_options presence: true do
     validates :title
     validates :text
+    validates :dog_size_id
   end
 
   validates :theme_id, numericality: { other_than: 0, message: 'を選択してください' }
