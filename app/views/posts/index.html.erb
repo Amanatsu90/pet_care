@@ -1,15 +1,18 @@
 <%= render "shared/header" %>
 
 <div class="main">
-  <div class="article-lists">
-    <% @posts.each do |post| %>
-      <div class="article">
-        <div class="article-title"><%= post.title %></div>
-        <div><%= post.text %></div>
-      </div>
-    <% end %>
+  <div class="main-left">
+    <div class="title">記事一覧</div>
+    <div class="article-lists">
+      <% @posts.each do |post| %>
+        <div class="article">
+          <div class="article-title"><%= post.title %></div>
+          <div><%= post.text %></div>
+        </div>
+      <% end %>
+    </div>
   </div>
-  
+
   <div class="side-menu">
     <div class="link-post">
     <% if user_signed_in?%>
