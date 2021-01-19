@@ -11,5 +11,7 @@
     <div class="article-theme"><%= @post.theme.name %></div>
   </div>
 
-  <%= link_to '編集', edit_post_path(@post.id) %>
+  <% if user_signed_in? && current_user.id == @post.user.id %>
+    <%= link_to '編集', edit_post_path(@post.id) %>
+  <% end %>
 </div>
