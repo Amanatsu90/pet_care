@@ -1,0 +1,13 @@
+<%= render "shared/header" %>
+
+<div class="article-show">
+  <div class="article-box">
+    <h1 class="article-title">タイトル：<%= @post.title %></h1>
+    <div class="article-image">
+    <%= image_tag @post.image.variant(resize: '500x500') if @post.image.attached? %>
+    </div>
+    <div class="article-text"><%= @post.text %></div>
+    <div class="post-user">投稿者：<%= @post.user.nickname %></div>
+    <div class="article-theme"><%= @post.theme.name %></div>
+  </div>
+</div>
