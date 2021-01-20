@@ -1,0 +1,32 @@
+<%= render "shared/header" %>
+
+<h2>アカウント情報変更</h2>
+
+<%= form_with model: current_user, local: true do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
+
+  <div class="field">
+    <div class='form-text-wrap'>
+      <label class="form-text">お名前</label>
+    </div>
+    <%= f.text_field :name, autofocus: true %>必須
+  </div>
+
+  <div class="field">
+    <div class='form-text-wrap'>
+      <label class="form-text">ニックネーム（6文字以内）</label>
+    </div>
+    <%= f.text_field :nickname %>必須
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>必須
+  </div>
+
+  <div class="actions">
+    <%= f.submit "変更" %>
+  </div>
+<% end %>
+
+<%= link_to "戻る", :back %>
