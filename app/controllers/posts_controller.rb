@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -7,6 +8,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    render :index unless user_signed_in?
   end
 
   def create
@@ -22,6 +24,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    redirect_to root_path unless current_user.id == @post.user.id
   end
 
   def update
