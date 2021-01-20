@@ -20,8 +20,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
 
   def edit
     redirect_to root_path unless current_user.id == @post.user.id

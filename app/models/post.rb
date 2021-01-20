@@ -17,6 +17,7 @@ class Post < ApplicationRecord
     if search != ""
       Post.where('text LIKE(?)', "%#{search}%")
     else
+      Post.all
     end
   end
 end
