@@ -1,0 +1,17 @@
+.main {
+  display: flex;
+}
+
+.main-left {
+  align-items: center;
+}
+.article-lists {
+  background-color:bisque;
+  width: calc(100vw - 300px);
+  height: 100vh;
+}
+
+.side-menu {
+  background-color:forestgreen;
+  width: 300px;
+}
