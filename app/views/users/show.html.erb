@@ -10,3 +10,9 @@
   </div>
   <% end %>
 </div>
+
+<% if user_signed_in? && current_user.id == @user.id %>
+  <%= link_to 'アカウント情報の変更', edit_user_path(current_user) %>
+  <%= link_to 'Passwordの変更', edit_user_registration_path %>
+  <%= button_to "アカウントの削除", registration_path(current_user), data: { confirm: "削除してよろしいですか?" }, method: :delete %></p>
+<% end %>

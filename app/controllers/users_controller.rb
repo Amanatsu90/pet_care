@@ -1,11 +1,13 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit]
+
   def show
-    user = User.find(params[:id])
-    @nickname = user.nickname
-    @posts = user.posts
+    @nickname = @user.nickname
+    @posts = @user.posts
   end
 
   def edit
+    redirect_to root_path unless current_user.id == @user.id
   end
 
   def update
@@ -19,6 +21,10 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:name, :nickname, :email)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 
 end
