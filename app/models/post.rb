@@ -12,4 +12,12 @@ class Post < ApplicationRecord
   end
 
   validates :theme_id, numericality: { other_than: 0, message: 'を選択してください' }
+
+  def self.search(search)
+    if search != ""
+      Post.where('text LIKE(?)', "%#{search}%")
+    else
+      Post.all
+    end
+  end
 end
