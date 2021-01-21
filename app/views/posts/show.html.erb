@@ -6,11 +6,11 @@
     <div class="article-image">
       <%= image_tag @post.image.variant(resize: '500x500') if @post.image.attached? %>
     </div>
-    <div class="article-text"><%= @post.text %></div>
+    <div class="article-text">本文：<%= @post.text %></div>
     <div class="post-user">
       投稿者：<%= link_to @post.user.nickname, user_path(@post.user.id) %>
     </div>
-    <div class="article-theme"><%= @post.theme.name %></div>
+    <div class="article-theme">テーマ：<%= @post.theme.name %></div>
   </div>
 
   <% if user_signed_in? && current_user.id == @post.user.id %>
