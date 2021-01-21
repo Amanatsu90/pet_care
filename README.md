@@ -34,7 +34,6 @@
 ### ActiveHash Associations
 
 - belongs_to :theme_tag
-- belongs_to :dog_size
 
 
 ## comments テーブル

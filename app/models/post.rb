@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
-  belongs_to :user
+  belongs_to       :user
+  has_many         :comments
   has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
@@ -14,7 +15,7 @@ class Post < ApplicationRecord
   validates :theme_id, numericality: { other_than: 0, message: 'を選択してください' }
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Post.where('text LIKE(?)', "%#{search}%")
     else
       Post.all
