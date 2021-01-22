@@ -1,22 +1,31 @@
 <%= render "shared/header" %>
 
+<h2 class="title">編集フォーム</h2>
+
 <div class="post-form">
-  <%= form_with(model: @post, local: true) do |f| %>
   <div class="form-box">
-    編集する
+  <%= form_with(model: @post, local: true) do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
 
     <%= f.text_field :title, placeholder: "タイトル", class: "article-title" %>
-    <div class="form-image">
-      <p>画像</p>
-      <%= f.file_field :image %>
-    </div>
+    <br>
     <%= f.text_area :text, placeholder: "本文", class: "article-text" %>
+    <%= f.label :image, '画像：' %>
+    <%= f.file_field :image %>
+    <br>
     <%= f.collection_select(:theme_id, Theme.all, :id, :name, {}, {class: "article-theme"}) %>
-    <%= f.radio_button :dog_size_id, 1 %>小型犬　<%= f.radio_button :dog_size_id, 2 %>中型犬　<%= f.radio_button :dog_size_id, 3 %>大型犬　　
+    <br>
+    <%= f.label :dog_size_id, '愛犬のサイズ：' %>
+    <%= f.radio_button :dog_size_id, 1, checked: true %>小型犬
+    <%= f.radio_button :dog_size_id, 2 %>中型犬
+    <%= f.radio_button :dog_size_id, 3 %>大型犬
+    <br>
+    <%= f.label :tag_list, 'タグ' %>
+    <%= f.text_field :tag_list, value: @post.tag_list.join(","), class: "article-tag" %>
+    <br>
     <%= f.submit "投稿する", class: "post-btn" %>
-  </div>
   <% end %>
+  </div>
 </div>
 
 <%= link_to "戻る", :back %>

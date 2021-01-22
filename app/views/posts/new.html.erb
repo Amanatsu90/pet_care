@@ -20,6 +20,9 @@
     <%= f.radio_button :dog_size_id, 2 %>中型犬
     <%= f.radio_button :dog_size_id, 3 %>大型犬
     <br>
+    <%= f.label :tag_list, 'タグ' %>
+    <%= f.text_field :tag_list, value: @post.tag_list.join(","), class: "article-tag" %>
+    <br>
     <%= f.submit "投稿する", class: "post-btn" %>
   <% end %>
   </div>
