@@ -16,7 +16,7 @@
     <%= f.collection_select(:theme_id, Theme.all, :id, :name, {}, {class: "article-theme"}) %>
     <br>
     <%= f.label :dog_size_id, '愛犬のサイズ：' %>
-    <%= f.radio_button :dog_size_id, 1 %>小型犬
+    <%= f.radio_button :dog_size_id, 1, checked: true %>小型犬
     <%= f.radio_button :dog_size_id, 2 %>中型犬
     <%= f.radio_button :dog_size_id, 3 %>大型犬
     <br>
