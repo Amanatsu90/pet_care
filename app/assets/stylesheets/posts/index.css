@@ -9,6 +9,7 @@
 /* 見出し */
 .title{
   margin: auto;
+  color: #43527d;
   font-size: 30px;
 }
 h1 {
@@ -23,8 +24,8 @@ h1:before, h1:after {
   display: inline-block;
   width: 45px;
   height: 2px;
-  border-top: solid 1px black;
-  border-bottom: solid 1px black;
+  border-top: solid 1px #43527d;
+  border-bottom: solid 1px #43527d;
 }
 h1:before {
   left:0;

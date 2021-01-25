@@ -1,0 +1,68 @@
+.user_show {
+  background-color:bisque;
+  width: 100vw;
+  height: 100vh;
+  padding-bottom: 20px;
+}
+.user_nickname {
+  width: 100vw;
+  margin: 0 auto;
+  padding: 20px 0;
+  font-size: 20px;
+  text-align: center;
+}
+.user_nickname b {
+  color: #43527d;
+  padding: 0.5em 0;
+  border-top: solid 3px #43527d;
+  border-bottom: solid 3px #43527d;
+}
+
+.account_edit {
+  width: 70vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+.user_edit_btn, .password_edit, .user_delete_btn {
+  display: block;
+}
+.user_edit_btn,.password_edit {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #afda9b;
+  color: #3a4a32;
+  border-bottom: solid 4px #3a4a32;
+  border-radius: 3px;
+}
+.user_edit_btn:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  border-bottom: none;
+}
+.password_edit:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  border-bottom: none;
+}
+
+.user_delete_btn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background: #d25959;
+  color: #FFF;
+  border-bottom: solid 4px #956262;
+  border-radius: 3px;
+}
+.user_delete_btn:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  border-bottom: none;
+}
+
+.user_show .back {
+  width: 100%;
+  margin-top: 30px;
+  text-align: center;
+}

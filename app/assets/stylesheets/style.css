@@ -57,7 +57,6 @@
   background-color: rgb(193, 227, 73);
   width: 200px;
   height: 60px;
-  /* padding: 16px 0; */
   font-size: 15px;
   text-align: center;
 }
@@ -65,10 +64,6 @@
   background :#afda9b;
   display: block;
   padding : 19px 0;
-  /* margin: 1.5px 0; */
-  /* padding : 11px 12px; */
-  /* color :#2f8fcf; */
-  /* font-weight: bold; */
   cursor :pointer;
   transition: all 0.5s;
 }
@@ -97,7 +92,6 @@
 
 /* サイズメニュー */
 .size_menu {
-  /* background-color: cadetblue; */
   width: 200px;
   height: 60px;
   padding: 0;
@@ -108,10 +102,6 @@
   background :#afda9b;
   display: block;
   padding : 19px 0;
-  /* margin: 1.5px 0; */
-  /* padding : 11px 12px; */
-  /* color :#2f8fcf; */
-  /* font-weight: bold; */
   cursor :pointer;
   transition: all 0.5s;
 }
@@ -149,19 +139,44 @@ li {
   display: list-item;
 }
 .nav {
+  width: 200px;
+  height: 60px;
+  padding: 0;
+  font-size: 15px;
+  text-align: center;
+/*   
   background-color: #afda9b;
   width: 200px;
   height: 60px;
   padding: 16px 0;
   position: relative;
   font-size: 15px;
-  text-align: center;
+  text-align: center; */
 }
-.more_list {
+.nav label {
+  background :#afda9b;
+  display: block;
+  padding : 19px 0;
+  cursor :pointer;
+  transition: all 0.5s;
+}
+.nav label:hover {
+  background :#c1e1c1;
+}
+.nav input {
+  display: none;
+}
+.nav .accshow {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.8s;
+}
+
+/* .more_list {
   background-color: #c1e1c1;
-  /* width: 200px; */
   position: absolute;
-  /* right: 370px; */
   top: 70px;
 }
 .hidden {
@@ -172,13 +187,27 @@ li {
   border: 1px solid #eee;
 }
 .nav__btn{
-  /* display: inline-block; */
-  /* padding: 0.4em 1.6em; */
   color: black;
   font-size: 15px;
   text-decoration: none;
   user-select: none;
-  /* border: 1px black solid; */
-  /* border-radius: 3px; */
-  /* transition: 0.4s ease; */
+ } */
+
+ /* 戻るボタン */
+ .back_btn {
+  position: relative;
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: black;
+  background: #afda9b;
+  border: solid 1px #68835b;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.2);
+}
+.btn-square:active {
+  border: solid 1px #afda9b;
+  box-shadow: none;
+  text-shadow: none;
 }

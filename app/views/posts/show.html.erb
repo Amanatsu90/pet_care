@@ -4,7 +4,7 @@
 <div class="article-show">
 
   <div class="article-info">
-    <span class="article-title"><%= @post.title %></span>
+    <span class="article-title"><b><%= @post.title %></b></span>
     <div class="article-image">
       <%= image_tag @post.image.variant(resize: '400x400') if @post.image.attached? %>
     </div>
