@@ -7,9 +7,9 @@
   justify-content: center;
   align-items: center;
 }
-.article-title,
-.article-text,
-.article-theme,
+.post-title,
+.post-text,
+.post-theme,
 .post-btn {
   margin: 10px;
 }

@@ -7,13 +7,13 @@
   <%= form_with(model: @post, local: true) do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
 
-    <%= f.text_field :title, placeholder: "タイトル", class: "article-title" %>
+    <%= f.text_field :title, placeholder: "タイトル", class: "post-title" %>
     <br>
-    <%= f.text_area :text, placeholder: "本文", class: "article-text" %>
+    <%= f.text_area :text, placeholder: "本文", class: "post-text" %>
     <%= f.label :image, '画像：' %>
     <%= f.file_field :image %>
     <br>
-    <%= f.collection_select(:theme_id, Theme.all, :id, :name, {}, {class: "article-theme"}) %>
+    <%= f.collection_select(:theme_id, Theme.all, :id, :name, {}, {class: "post-theme"}) %>
     <br>
     <%= f.label :dog_size_id, '愛犬のサイズ：' %>
     <%= f.radio_button :dog_size_id, 1, checked: true %>小型犬

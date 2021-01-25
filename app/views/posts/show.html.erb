@@ -1,40 +1,56 @@
-<%= render "shared/header" %>
 <% breadcrumb :posts_show, @post %>
+<%# <%= render "shared/header" %>
 
 <div class="article-show">
+
   <div class="article-info">
-    <h1 class="article-title">タイトル：<%= @post.title %></h1>
+    <span class="article-title"><%= @post.title %></span>
     <div class="article-image">
-      <%= image_tag @post.image.variant(resize: '500x500') if @post.image.attached? %>
+      <%= image_tag @post.image.variant(resize: '400x400') if @post.image.attached? %>
     </div>
-    <div class="article-text">本文：<%= @post.text %></div>
-    <div class="post-user">
-      投稿者：<%= link_to @post.user.nickname, user_path(@post.user.id) %>
+    <div class="article-text">
+      <p>本文：<%= @post.text %></p>
     </div>
-    <div class="article-theme">テーマ：<%= @post.theme.name %></div>
-    <% @post.tag_list.each do |tag| %>
-      <%= link_to tag, post_path(tag_name: tag) %>
-    <% end %>
+    <div class="article-time">
+      投稿日:<%= @post.updated_at %>
+    </div>
+    <div class="user_info">
+      <div class="post-user">
+        <b>投稿者：</b><%= link_to @post.user.nickname, user_path(@post.user.id) %>
+      </div>
+      <div class="article-theme">
+        <b>テーマ：</b><%= @post.theme.name %>
+      </div>
+      <div class="article_tag">
+        <b>タグ：</b>
+        <% @post.tag_list.each do |tag| %>
+          <%= link_to tag, post_path(tag_name: tag) %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="article_btn">
+      <% if user_signed_in? && current_user.id == @post.user.id %>
+        <%= link_to '編集', edit_post_path(@post.id), class: "edit_btn" %>
+        <%= link_to '削除', post_path(@post.id), method: :delete, class: "delete_btn" %>
+      <% end %>
+      </div>
   </div>
 
-  <% if user_signed_in? && current_user.id == @post.user.id %>
-    <%= link_to '編集', edit_post_path(@post.id) %>
-    <%= link_to '削除', post_path(@post.id), method: :delete %>
-  <% end %>
 
   <div class="comments-form">
     <% if user_signed_in? %>
       <%= form_with(model: [@post, @comment], local: true) do |f| %>
-        <%= f.text_area :text, placeholder: "コメントする" %>
-        <%= f.submit "SEND" %>
+        <%= f.text_area :text, placeholder: "コメントする(200文字以内)", size: "50x4", maxlength: "200", class: "comment_text" %>
+        <%= f.submit "SEND", class: "comment_btn" %>
       <% end %>
     <% else %>
       <strong><p>＊コメント投稿には新規登録/ログインが必要です＊</p></strong>
     <% end %>
   </div>
 
-  <div class="comments">
-    <h4>＜コメント一覧＞</h4>
+  <div class="comments_fild">
+    <h1>コメント一覧</h1>
     <% @comments.each do |comment| %>
       <p>
         <strong><%= link_to comment.user.nickname, user_path(comment.user_id) %>：</strong>
@@ -42,6 +58,6 @@
       </p>
     <% end %>
   </div>
-</div>
 
-<%= link_to "戻る", :back %>
+<%= link_to "戻る", :back, class: "back_btn" %>
+</div>
