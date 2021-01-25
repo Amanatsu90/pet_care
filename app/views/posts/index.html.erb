@@ -1,32 +1,32 @@
-<%= render "shared/header" %>
+<%# <%= render "shared/header" %> %>
 <% breadcrumb :root %>
 
 <div class="main">
-  <div class="main-left">
-    <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
-      <%= form.text_field :keyword, placeholder: "記事を検索する", class: "search-input" %>
-      <%= form.submit "検索", class: "search-btn" %>
-    <% end %>
 
-    <div class="title">記事一覧</div>
-    <div class="article-lists">
+  <div class="main-body">
+    <div class="title"><h1>記事一覧</h1></div>
+    <div class="lists">
       <% @posts.each do |post| %>
         <div class="article">
-          <div class="article-title"><%= post.title %></div>
-          <div><%= post.text %></div>
-          <div><%= link_to '詳細', post_path(post.id) %></div>
+          <%= link_to post_path(post.id), class: "link" do %>
+          <div class="article_content">
+            <div class="article_image">
+              <%= image_tag post.image.variant(resize: '200x200'), class: "img" if post.image.attached? %>
+            </div>
+            <div class="article_info">
+              <div class="article_title">
+                <%= post.title %>
+              </div>
+              <div class="article_theme"><%= post.theme.name %></div>
+              <div class="article_time"><%= post.updated_at %></div>
+            </div>
+          </div>
+          <% end %>
         </div>
       <% end %>
     </div>
   </div>
 
-  <div class="side-menu">
-    <div class="link-post">
-    <% if user_signed_in?%>
-      <%= button_to '記事を投稿する', new_post_path, method: :get %>
-    <% end %>
-    </div>
-  </div>
 </div>
 
 <%= render "shared/footer" %>
