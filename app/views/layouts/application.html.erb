@@ -1,16 +1,99 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PetCare</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@300&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <title>PetCare</title>
   </head>
 
   <body>
-    <%= breadcrumbs separator: " &rsaquo; " %>
+    <header>
+      <div  class="header">
+
+        <div class="hed-left">
+          <%= link_to image_tag("logo.png", class: :logo), root_path %>
+        </div>
+
+        <div class="hed-center">
+          <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |f| %>
+            <%= f.text_field :keyword, placeholder: "キーワードを入力", class: "search-input" %>
+            <label class="search-btn">
+              <%= fa_icon "search 2x", class: "fa-search" %>
+              <%= f.submit "検索", class: "hidden" %>
+            </label>
+          <% end %>
+        </div>
+
+        <div class="hed_right">
+          <div class="theme_menu">
+            <label for="theme_title">テーマから探す</label>
+            <input type="checkbox" id="theme_title" class="cssacc" />
+            <div class="accshow">
+              <ul class="size_lists">
+                <li>食事内容、介助方法</li>
+                <li>介護環境の対策</li>
+                <li>トイレのケア</li>
+                <li>散歩のケア</li>
+                <li>体のケア</li>
+                <li>寝たきりのケア</li>
+                <li>介護グッズ</li>
+                <li>夜泣きの対策</li>
+                <li>認知症の対策</li>
+                <li>暑さ対策</li>
+                <li>その他</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="size_menu">
+            <label for="size_title">サイズから探す</label>
+            <input type="checkbox" id="size_title" class="cssacc" />
+            <div class="accshow">
+              <ul class="size_lists">
+                <li>小型犬</li>
+                <li>中型犬</li>
+                <li>大型犬</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="nav"  id="lists">
+            <span class="lists_btn">Menu</span>
+            <ul class="more_list hidden" id="pull-down">
+              <% if user_signed_in? %>
+                <li>
+                  <%= link_to '記事を投稿する', new_post_path, class: "nav__btn" %>
+                </li>
+                <li class="pull-down-list">
+                  <%= link_to 'マイページ', user_path(current_user.id), class: "nav__btn" %>
+                </li>
+                <li class="pull-down-list">
+                  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav__btn" %>
+                </li>
+              <% else %>
+                </li>
+                <li class="pull-down-list">
+                  <%= link_to '新規登録', new_user_registration_path, class: "nav__btn" %>
+                </li>
+                <li class="pull-down-list">
+                  <%= link_to 'ログイン', new_user_session_path, class: "nav__btn" %>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </header>
+      <%= breadcrumbs separator: " &rsaquo; " %>
     <%= yield %>
   </body>
 </html>

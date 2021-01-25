@@ -1,0 +1,184 @@
+/* ヘッダー */
+
+.header {
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.hed-left {
+  margin: 5px 0;
+}
+
+.hed-center {
+  background-color: #9fbb5b;
+  padding-top: 30px;
+}
+
+.hed_right {
+  width: 700px;
+  margin-left: 400px;
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 200px;
+  height: 100px;
+}
+
+/* 検索欄 */
+.search-form {
+  position:relative;
+  max-width:300px;
+  margin-bottom:20px;
+}
+.search-input {
+  height:40px;
+  padding:0 60px 0 15px; 
+  position:absolute; 
+  left:0;
+  top:0; 
+  border-radius:25px;
+  outline:0;
+  background:#eee;
+}
+.search-btn{
+  font-size:15px;	
+  position:absolute;
+  margin: 3px 0 5px 220px;
+}
+.hidden {
+  display: none;
+}
+
+/* テーマメニュー */
+.theme_menu {
+  background-color: rgb(193, 227, 73);
+  width: 200px;
+  height: 60px;
+  /* padding: 16px 0; */
+  font-size: 15px;
+  text-align: center;
+}
+.theme_menu label {
+  background :#afda9b;
+  display: block;
+  padding : 19px 0;
+  /* margin: 1.5px 0; */
+  /* padding : 11px 12px; */
+  /* color :#2f8fcf; */
+  /* font-weight: bold; */
+  cursor :pointer;
+  transition: all 0.5s;
+}
+.theme_menu label:hover {
+  background :#c1e1c1;
+}
+.theme_menu input {
+  display: none;
+}
+.theme_menu .accshow {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.8s;
+}
+.cssacc:checked + .accshow {
+  background: #c1e1c1;
+  width: 200px;
+  height: auto;
+  padding: 5px;
+  opacity: 1;
+  position: absolute;
+  z-index: 3;
+}
+
+/* サイズメニュー */
+.size_menu {
+  /* background-color: cadetblue; */
+  width: 200px;
+  height: 60px;
+  padding: 0;
+  font-size: 15px;
+  text-align: center;
+}
+.size_menu label {
+  background :#afda9b;
+  display: block;
+  padding : 19px 0;
+  /* margin: 1.5px 0; */
+  /* padding : 11px 12px; */
+  /* color :#2f8fcf; */
+  /* font-weight: bold; */
+  cursor :pointer;
+  transition: all 0.5s;
+}
+.size_menu label:hover {
+  background :#c1e1c1;
+}
+.size_menu input {
+  display: none;
+}
+.size_menu .accshow {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: 0.8s;
+}
+.cssacc:checked + .accshow {
+  background: #c1e1c1;
+  width: 200px;
+  height: auto;
+  padding: 5px;
+  opacity: 1;
+  position: absolute;
+  z-index: 3;
+}
+
+/* マイメニュー */
+ul,li {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+  padding: 20px;
+  display: list-item;
+}
+.nav {
+  background-color: #afda9b;
+  width: 200px;
+  height: 60px;
+  padding: 16px 0;
+  position: relative;
+  font-size: 15px;
+  text-align: center;
+}
+.more_list {
+  background-color: #c1e1c1;
+  /* width: 200px; */
+  position: absolute;
+  /* right: 370px; */
+  top: 70px;
+}
+.hidden {
+  display: none;
+}
+.pull-down-list{
+  padding: 15px 35px 15px 15px;
+  border: 1px solid #eee;
+}
+.nav__btn{
+  /* display: inline-block; */
+  /* padding: 0.4em 1.6em; */
+  color: black;
+  font-size: 15px;
+  text-decoration: none;
+  user-select: none;
+  /* border: 1px black solid; */
+  /* border-radius: 3px; */
+  /* transition: 0.4s ease; */
+}
