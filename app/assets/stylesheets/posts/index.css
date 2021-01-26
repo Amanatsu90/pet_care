@@ -3,14 +3,15 @@
   width: 100vw;
   height: 100vh;
   padding: 0 25px;
-  align-items: center;
 }
 
 /* 見出し */
-.title{
+.main-title,
+.title {
   margin: auto;
   color: #43527d;
   font-size: 30px;
+  text-align: center;
 }
 h1 {
   position: relative;

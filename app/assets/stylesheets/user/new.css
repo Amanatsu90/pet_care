@@ -1,4 +1,5 @@
-.user_new {
+.user_new,
+.user_edit {
   background-color:bisque;
   width: 100vw;
   height: 100vh;
@@ -8,19 +9,34 @@
 .user_new .title {
   text-align: center;
 }
+.user_edit .title {
+  text-align: center;
+}
 
 .user-name,
 .user-nickname,
 .user-email,
 .user-pass,
-.confirm-pass {
+.confirm-pass,
+.remember_me {
   grid-column: 2 / 3;
   height:40px;
   margin:3px;
   padding: 3px 8px;
 }
+
 .registration-btn:active {
   border: solid 1px #afda9b;
   box-shadow: none;
   text-shadow: none;
+}
+.login_btn:active {
+  border: solid 1px #afda9b;
+  box-shadow: none;
+  text-shadow: none;
+}
+.registration-btn,
+.login_btn {
+  display: block;
+  margin: 10px auto;
 }

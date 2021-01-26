@@ -25,9 +25,9 @@
         <%= f.label :text, '本文（必須）' %>
         <%= f.text_area :text, placeholder: "記事の本文", class: "post-text" %>
       </div>
+
       <%= f.submit "投稿する", class: "post-btn" %>
     <% end %>
-    
   </div>
 
   <div class="back"><%= link_to "戻る", :back, class: "back_btn" %></div>
