@@ -1,0 +1,26 @@
+.user_new {
+  background-color:bisque;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+}
+
+.user_new .title {
+  text-align: center;
+}
+
+.user-name,
+.user-nickname,
+.user-email,
+.user-pass,
+.confirm-pass {
+  grid-column: 2 / 3;
+  height:40px;
+  margin:3px;
+  padding: 3px 8px;
+}
+.registration-btn:active {
+  border: solid 1px #afda9b;
+  box-shadow: none;
+  text-shadow: none;
+}

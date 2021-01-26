@@ -6,6 +6,7 @@
   <div class="form">
     <%= form_with(model: @post, local: true) do |f| %>
       <%= render 'shared/error_messages', model: f.object %>
+
       <div class="form-box">
         <%= f.label :title, 'タイトル（必須）' %>
         <%= f.text_field :title, placeholder: "記事のタイトル", class: "post-title" %>
@@ -26,6 +27,7 @@
       </div>
       <%= f.submit "投稿する", class: "post-btn" %>
     <% end %>
+    
   </div>
 
   <div class="back"><%= link_to "戻る", :back, class: "back_btn" %></div>
