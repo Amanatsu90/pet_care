@@ -17,4 +17,4 @@ const pay = () => {
   });
 };
 
-window.addEventListener("load", pay);
+// window.addEventListener("load", pay);

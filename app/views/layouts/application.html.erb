@@ -66,28 +66,32 @@
             </div>
           </div>
 
-          <div class="nav"  id="lists">
-            <span class="lists_btn">Menu</span>
-            <ul class="more_list hidden" id="pull-down">
-              <% if user_signed_in? %>
-                <li>
-                  <%= link_to '記事を投稿する', new_post_path, class: "nav__btn" %>
-                </li>
-                <li class="pull-down-list">
-                  <%= link_to 'マイページ', user_path(current_user.id), class: "nav__btn" %>
-                </li>
-                <li class="pull-down-list">
-                  <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav__btn" %>
-                </li>
-              <% else %>
-                </li>
-                <li class="pull-down-list">
-                  <%= link_to '新規登録', new_user_registration_path, class: "nav__btn" %>
-                </li>
-                <li class="pull-down-list">
-                  <%= link_to 'ログイン', new_user_session_path, class: "nav__btn" %>
-              <% end %>
-            </ul>
+          <div class="nav">
+            <label for="lists_btn">Menu</label>
+            <input type="checkbox" id="lists_btn" class="cssacc" />
+            <div class="accshow">
+              <ul class="menu_list">
+                <% if user_signed_in? %>
+                  <li>
+                    <%= link_to '記事を投稿する', new_post_path, class: "nav__btn" %>
+                  </li>
+                  <li>
+                    <%= link_to 'マイページ', user_path(current_user.id), class: "nav__btn" %>
+                  </li>
+                  <li>
+                    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav__btn" %>
+                  </li>
+                <% else %>
+                  </li>
+                  <li>
+                    <%= link_to '新規登録', new_user_registration_path, class: "nav__btn" %>
+                  </li>
+                  <li>
+                    <%= link_to 'ログイン', new_user_session_path, class: "nav__btn" %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
           </div>
         </div>
 
