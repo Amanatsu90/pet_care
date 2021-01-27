@@ -3,9 +3,13 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.order(created_at: :DESC)
-    if params[:tag_name]
+    if params[:dog_size_id]
+      @posts = Post.where(dog_size_id: params[:dog_size_id])
+    elsif params[:tag_name]
       @posts = Post.tagged_with("#{params[:tag_name]}")
+      # binding.pry
+    else
+      @posts = Post.order(created_at: :DESC)
     end
   end
 
@@ -48,8 +52,12 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.search(params[:keyword])
+    @posts = Post.search(params[:keyword]).order(created_at: :DESC)
   end
+
+  # def size
+  #   @posts = Post.size(params[:dog_size_id]).order(created_at: :DESC)
+  # end
 
   private
 
