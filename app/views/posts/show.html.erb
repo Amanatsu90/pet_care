@@ -4,6 +4,13 @@
 <div class="article-show">
 
   <div class="article-info">
+    <div class="article_btn">
+      <% if user_signed_in? && current_user.id == @post.user.id %>
+        <%= link_to '編集', edit_post_path(@post.id), class: "edit_btn" %>
+        <%= link_to '削除', post_path(@post.id), method: :delete, class: "delete_btn" %>
+      <% end %>
+    </div>
+
     <span class="article-title"><b><%= @post.title %></b></span>
     <div class="article-image">
       <%= image_tag @post.image.variant(resize: '400x400') if @post.image.attached? %>
@@ -19,7 +26,7 @@
         <b>投稿者：</b><%= link_to @post.user.nickname, user_path(@post.user.id) %>
       </div>
       <div class="article-theme">
-        <b>テーマ：</b><%= @post.theme.name %>
+        <b>記事のテーマ：</b><%= @post.theme.name %>
       </div>
       <div class="article_tag">
         <b>タグ：</b>
@@ -28,13 +35,6 @@
         <% end %>
       </div>
     </div>
-
-    <div class="article_btn">
-      <% if user_signed_in? && current_user.id == @post.user.id %>
-        <%= link_to '編集', edit_post_path(@post.id), class: "edit_btn" %>
-        <%= link_to '削除', post_path(@post.id), method: :delete, class: "delete_btn" %>
-      <% end %>
-      </div>
   </div>
 
 
