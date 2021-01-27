@@ -144,14 +144,6 @@ li {
   padding: 0;
   font-size: 15px;
   text-align: center;
-/*   
-  background-color: #afda9b;
-  width: 200px;
-  height: 60px;
-  padding: 16px 0;
-  position: relative;
-  font-size: 15px;
-  text-align: center; */
 }
 .nav label {
   background :#afda9b;
@@ -173,25 +165,6 @@ li {
   opacity: 0;
   transition: 0.8s;
 }
-
-/* .more_list {
-  background-color: #c1e1c1;
-  position: absolute;
-  top: 70px;
-}
-.hidden {
-  display: none;
-}
-.pull-down-list{
-  padding: 15px 35px 15px 15px;
-  border: 1px solid #eee;
-}
-.nav__btn{
-  color: black;
-  font-size: 15px;
-  text-decoration: none;
-  user-select: none;
- } */
 
  /* 戻るボタン */
  .back_btn {
