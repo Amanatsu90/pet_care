@@ -3,11 +3,12 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:dog_size_id]
+    if params[:theme_id]
+      @posts = Post.where(theme_id: params[:theme_id])
+    elsif params[:dog_size_id]
       @posts = Post.where(dog_size_id: params[:dog_size_id])
     elsif params[:tag_name]
       @posts = Post.tagged_with("#{params[:tag_name]}")
-      # binding.pry
     else
       @posts = Post.order(created_at: :DESC)
     end

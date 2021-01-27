@@ -38,18 +38,18 @@
             <label for="theme_title">テーマから探す</label>
             <input type="checkbox" id="theme_title" class="cssacc" />
             <div class="accshow">
-              <ul class="size_lists">
-                <li>食事内容、介助方法</li>
-                <li>介護環境の対策</li>
-                <li>トイレのケア</li>
-                <li>散歩のケア</li>
-                <li>体のケア</li>
-                <li>寝たきりのケア</li>
-                <li>介護グッズ</li>
-                <li>夜泣きの対策</li>
-                <li>認知症の対策</li>
-                <li>暑さ対策</li>
-                <li>その他</li>
+              <ul class="theme_lists">
+                <li><%= link_to '食事内容、介助方法', posts_path(theme_id: 1) %></li>
+                <li><%= link_to '介護環境の対策', posts_path(theme_id: 2) %></li>
+                <li><%= link_to 'トイレのケア', posts_path(theme_id: 3) %></li>
+                <li><%= link_to '散歩のケア', posts_path(theme_id: 4) %></li>
+                <li><%= link_to '体のケア', posts_path(theme_id: 5) %></li>
+                <li><%= link_to '寝たきりのケア', posts_path(theme_id: 6) %></li>
+                <li><%= link_to '介護グッズ', posts_path(theme_id: 7) %></li>
+                <li><%= link_to '夜泣きの対策', posts_path(theme_id: 8) %></li>
+                <li><%= link_to '認知症の対策', posts_path(theme_id: 9) %></li>
+                <li><%= link_to '暑さ対策', posts_path(theme_id: 10) %></li>
+                <li><%= link_to 'その他', posts_path(theme_id: 11) %></li>
               </ul>
             </div>
           </div>
