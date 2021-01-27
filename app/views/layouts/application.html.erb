@@ -59,9 +59,15 @@
             <input type="checkbox" id="size_title" class="cssacc" />
             <div class="accshow">
               <ul class="size_lists">
-                <li>小型犬</li>
-                <li>中型犬</li>
-                <li>大型犬</li>
+                <li>
+                  <%= link_to '小型犬', posts_path(dog_size_id: 1) %>
+                </li>
+                <li>
+                  <%= link_to '中型犬', posts_path(dog_size_id: 2) %>
+                </li>
+                <li>
+                  <%= link_to '大型犬', posts_path(dog_size_id: 3) %>
+                </li>
               </ul>
             </div>
           </div>
