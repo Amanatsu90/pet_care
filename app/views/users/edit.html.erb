@@ -1,33 +1,24 @@
 <%# <%= render "shared/header" %>
 <% breadcrumb :edit_user, @user %>
 
-<h2>アカウント情報変更</h2>
+<div class="user_form">
+  <h2 class="title">アカウント情報の変更</h2>
 
-<%= form_with model: current_user, local: true do |f| %>
-  <%= render 'shared/error_messages', model: f.object %>
+  <div class="form">
+    <%= form_with model: current_user, local: true do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
 
-  <div class="field">
-    <div class='form-text-wrap'>
-      <label class="form-text">お名前</label>
-    </div>
-    <%= f.text_field :name, autofocus: true %>必須
+      <div class="form-box">
+        <%= f.label :name, 'お名前（必須）' %>
+        <%= f.text_field :name, autofocus: true, class: "user-name" %>
+        <%= f.label :nickname, 'ニックネーム（必須）' %>
+        <%= f.text_field :nickname, placeholder: "6文字以内", class: "user-nickname" %>
+        <%= f.label :email, 'Eメール（必須）' %>
+        <%= f.email_field :email, class: "user-email" %>
+      </div>
+
+        <%= f.submit "変更", class: "submit-btn" %>
+    <% end %>
   </div>
-
-  <div class="field">
-    <div class='form-text-wrap'>
-      <label class="form-text">ニックネーム（6文字以内）</label>
-    </div>
-    <%= f.text_field :nickname %>必須
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>必須
-  </div>
-
-  <div class="actions">
-    <%= f.submit "変更" %>
-  </div>
-<% end %>
-
-<%= link_to "戻る", :back %>
+  <div class="back"><%= link_to "戻る", :back, class: "back_btn" %></div>
+</div>

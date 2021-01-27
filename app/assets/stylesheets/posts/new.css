@@ -53,8 +53,7 @@
   height:160px;
 }
 .post-btn,
-.registration-btn,
-.login_btn {
+.submit-btn {
   position: relative;
   display: inline-block;
   padding: 0.3em 1em;
