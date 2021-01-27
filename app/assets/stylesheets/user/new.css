@@ -1,0 +1,33 @@
+.user_form {
+  background-color:bisque;
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+}
+
+.user_form .title {
+  text-align: center;
+}
+
+.user-name,
+.user-nickname,
+.user-email,
+.user-pass,
+.confirm-pass,
+.current-pass,
+.remember_me {
+  grid-column: 2 / 3;
+  height:40px;
+  margin:3px;
+  padding: 3px 8px;
+}
+
+.submit-btn:active {
+  border: solid 1px #afda9b;
+  box-shadow: none;
+  text-shadow: none;
+}
+.submit-btn {
+  display: block;
+  margin: 10px auto;
+}

@@ -65,3 +65,4 @@ gem 'pry-rails'
 gem 'rails-i18n'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem "gretel"
+gem 'font-awesome-rails'

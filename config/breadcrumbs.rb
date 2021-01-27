@@ -2,15 +2,27 @@ crumb :root do
   link "Home", root_path
 end
 
-crumb :users_show do
-  link "マイページ", user_path(current_user.id)
+crumb :user do |user|
+  link user.nickname, user_path(user)
   parent :root
 end
 
-crumb :posts_show do |post|
-  link post.title, post_path(post.id)
-  parent :users_show
+crumb :post do |post|
+  link post.title, post_path(post)
+  parent :root
 end
+
+crumb :edit_user do |user|
+  link "編集", edit_user_registration_path
+  parent :user, user
+end
+
+crumb :edit_post do |post|
+  link "編集", edit_post_path
+  parent :post, post
+end
+
+
 
 # crumb :projects do
 #   link "Projects", projects_path

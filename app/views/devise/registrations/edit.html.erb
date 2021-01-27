@@ -1,30 +1,24 @@
-<h2>パスワード変更</h2>
+<div class="user_form">
+  <h2 class="title">パスワード変更</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <div class="form">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-  <%# <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <%# <div>Currently waiting confirmation for: <%= resource.unconfirmed_email</div> %>
-  <%# <% end %>
+      <%# <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <%# <div>Currently waiting confirmation for: <%= resource.unconfirmed_email</div> %>
+      <%# <% end %>
+      <div class="form-box">
+        <%= f.label :password, '新しいパスワード' %>
+        <%= f.password_field :password, placeholder: "6文字以上、半角英数字", autofocus: true, class: "user-pass" %>
+        <%= f.label :password_confirmation, '新しいパスワード（確認）' %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "confirm-pass" %>
+        <%= f.label :current_password, '現在のパスワード（確認用）' %>
+        <%= f.password_field :current_password, autocomplete: "off", class: "current-pass" %>
+      </div>
 
-  <div class="field">
-    <label class="form-text">新しいパスワード（6文字以上、半角英数字）</label><br/>
-    <%= f.password_field :password, autofocus: true,autocomplete: "new-password" %>
+      <%= f.submit "更新", class: "submit-btn" %>
+    <% end %>
   </div>
-
-  <div class="field">
-    <label class="form-text">新しいパスワード（確認用）</label><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(確認のために現在のパスワードを入力して下さい)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<%= link_to "戻る", :back %>
+  <div class="back"><%= link_to "戻る", :back, class: "back_btn" %></div>
+</div>

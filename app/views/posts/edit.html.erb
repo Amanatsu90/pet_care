@@ -1,31 +1,33 @@
-<%= render "shared/header" %>
-
-<h2 class="title">編集フォーム</h2>
+<%# <%= render "shared/header" %>
+<% breadcrumb :edit_post, @post %>
 
 <div class="post-form">
-  <div class="form-box">
-  <%= form_with(model: @post, local: true) do |f| %>
-    <%= render 'shared/error_messages', model: f.object %>
+  <h2 class="title">編集フォーム</h2>
 
-    <%= f.text_field :title, placeholder: "タイトル", class: "article-title" %>
-    <br>
-    <%= f.text_area :text, placeholder: "本文", class: "article-text" %>
-    <%= f.label :image, '画像：' %>
-    <%= f.file_field :image %>
-    <br>
-    <%= f.collection_select(:theme_id, Theme.all, :id, :name, {}, {class: "article-theme"}) %>
-    <br>
-    <%= f.label :dog_size_id, '愛犬のサイズ：' %>
-    <%= f.radio_button :dog_size_id, 1, checked: true %>小型犬
-    <%= f.radio_button :dog_size_id, 2 %>中型犬
-    <%= f.radio_button :dog_size_id, 3 %>大型犬
-    <br>
-    <%= f.label :tag_list, 'タグ' %>
-    <%= f.text_field :tag_list, value: @post.tag_list.join(","), class: "article-tag" %>
-    <br>
-    <%= f.submit "投稿する", class: "post-btn" %>
-  <% end %>
+  <div class="form">
+    <%= form_with(model: @post, local: true) do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
+      <div class="form-box">
+        <%= f.label :title, 'タイトル（必須）' %>
+        <%= f.text_field :title, placeholder: "記事のタイトル", class: "post-title" %>
+        <%= f.label :theme_id, '記事のテーマ（必須）' %>
+        <%= f.collection_select(:theme_id, Theme.all, :id, :name, {}, {class: "post-theme"}) %>
+        <%= f.label :dog_size_id, '愛犬のサイズ（必須）' %>
+        <p class="post-dog-size">
+          <%= f.radio_button :dog_size_id, 1, checked: true %>小型犬
+          <%= f.radio_button :dog_size_id, 2 %>中型犬
+          <%= f.radio_button :dog_size_id, 3 %>大型犬
+        </p>
+        <%= f.label :tag_list, 'タグ（任意）' %>
+        <%= f.text_field :tag_list, value: @post.tag_list.join(","), class: "article-tag" %>
+        <%= f.label :image, '画像（任意）' %>
+        <%= f.file_field :image, class: "post-image" %>
+        <%= f.label :text, '本文（必須）' %>
+        <%= f.text_area :text, placeholder: "記事の本文", class: "post-text" %>
+      </div>
+      <%= f.submit "投稿する", class: "post-btn" %>
+    <% end %>
   </div>
-</div>
 
-<%= link_to "戻る", :back %>
+  <div class="back"><%= link_to "戻る", :back, class: "back_btn" %></div>
+</div>
