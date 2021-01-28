@@ -82,6 +82,9 @@
                     <%= link_to '記事を投稿する', new_post_path, class: "nav__btn" %>
                   </li>
                   <li>
+                    <%= link_to 'お気に入り一覧', favorites_posts_path, class: "nav__btn" %>
+                  </li>
+                  <li>
                     <%= link_to 'マイページ', user_path(current_user.id), class: "nav__btn" %>
                   </li>
                   <li>

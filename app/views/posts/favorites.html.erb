@@ -1,9 +1,8 @@
-<% breadcrumb :root %>
 
 <div class="main">
 
   <div class="main-body">
-    <div class="main-title"><h1>記事一覧</h1></div>
+    <div class="title"><h1>お気に入り一覧</h1></div>
     <div class="lists">
       <% @posts.each do |post| %>
         <div class="article">
@@ -17,7 +16,7 @@
                 <%= post.title %>
               </div>
               <div class="article_theme"><%= post.theme.name %></div>
-              <div class="article_time"><%= l post.updated_at %></div>
+              <div class="article_time"><%= post.updated_at %></div>
             </div>
           </div>
           <% end %>
@@ -26,6 +25,7 @@
     </div>
   </div>
 
+  <%= link_to "戻る", :back, class: "back_btn" %>
 </div>
 
 <%= render "shared/footer" %>

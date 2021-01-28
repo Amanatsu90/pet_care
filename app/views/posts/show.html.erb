@@ -35,9 +35,9 @@
           <%= link_to tag, post_path(tag_name: tag) %>
         <% end %>
       </div>
-      <% if !Favorite.exists?(user_id: current_user.id, post_id: @post.id) %>
+      <% if user_signed_in? && !Favorite.exists?(user_id: current_user.id, post_id: @post.id) %>
         <%= link_to "お気に入り", post_favorites_path(@post.id), method: :post %>
-      <% else %>
+      <% elsif user_signed_in? %>
         <%= link_to "お気に入りを解除", post_favorite_path(@post.id), method: :delete %>
       <% end %>
     </div>
