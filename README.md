@@ -27,7 +27,7 @@
 
 ### Association
 
-- belongs_to :user
+- has_many :users
 - has_many :comments
 - has_one_attached :image
 
@@ -47,4 +47,17 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :posts
+- belongs_to :post
+
+
+## favorite テーブル
+
+| Column | Type       | Options                        | 
+| ------ | ---------- | ------------------------------ | 
+| user   | references | null: false, foreign_key: true | 
+| post   | references | null: false, foreign_key: true | 
+
+### Association
+
+- belongs_to :user
+- belongs_to :post

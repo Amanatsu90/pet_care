@@ -56,9 +56,10 @@ class PostsController < ApplicationController
     @posts = Post.search(params[:keyword]).order(created_at: :DESC)
   end
 
-  # def size
-  #   @posts = Post.size(params[:dog_size_id]).order(created_at: :DESC)
-  # end
+  def favorites
+    favorites = Favorite.where(user_id: current_user.id).pluck(:post_id)
+    @posts = Post.find(favorites)
+  end
 
   private
 
