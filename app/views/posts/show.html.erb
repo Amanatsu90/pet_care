@@ -37,6 +37,8 @@
       </div>
       <% if !Favorite.exists?(user_id: current_user.id, post_id: @post.id) %>
         <%= link_to "お気に入り", post_favorites_path(@post.id), method: :post %>
+      <% else %>
+        <%= link_to "お気に入りを解除", post_favorite_path(@post.id), method: :delete %>
       <% end %>
     </div>
 
