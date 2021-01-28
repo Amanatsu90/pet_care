@@ -56,10 +56,6 @@ class PostsController < ApplicationController
     @posts = Post.search(params[:keyword]).order(created_at: :DESC)
   end
 
-  # def size
-  #   @posts = Post.size(params[:dog_size_id]).order(created_at: :DESC)
-  # end
-
   private
 
   def post_params

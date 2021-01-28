@@ -21,6 +21,7 @@
     <div class="article-time">
       投稿日:<%= l @post.updated_at %>
     </div>
+
     <div class="user_info">
       <div class="post-user">
         <b>投稿者：</b><%= link_to @post.user.nickname, user_path(@post.user.id) %>
@@ -34,7 +35,11 @@
           <%= link_to tag, post_path(tag_name: tag) %>
         <% end %>
       </div>
+      <% if !Favorite.exists?(user_id: current_user.id, post_id: @post.id) %>
+        <%= link_to "お気に入り", post_favorites_path(@post.id), method: :post %>
+      <% end %>
     </div>
+
   </div>
 
 
