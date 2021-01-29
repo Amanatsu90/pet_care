@@ -10,32 +10,31 @@
 }
 
 /* 見出し */
-.main-title,
 .title {
   margin: auto;
   color: #43527d;
-  font-size: 30px;
+  font-size: 35px;
   text-align: center;
 }
-h1 {
+.title p {
   position: relative;
   display: inline-block;
   padding: 0 55px;
 }
-h1:before, h1:after {
+.title p:before, .title p:after {
   content: '';
   position: absolute;
   top: 50%;
   display: inline-block;
   width: 45px;
-  height: 2px;
+  height: 5px;
   border-top: solid 1px #43527d;
   border-bottom: solid 1px #43527d;
 }
-h1:before {
+.title p:before {
   left:0;
 }
-h1:after {
+.title p:after {
   right: 0;
 }
 
