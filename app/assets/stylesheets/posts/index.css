@@ -12,6 +12,7 @@
 /* 見出し */
 .title {
   margin: auto;
+  padding-bottom: 10px;
   color: #43527d;
   font-size: 35px;
   text-align: center;
