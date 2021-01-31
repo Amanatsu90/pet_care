@@ -3,7 +3,7 @@ header{
   top: 0;
   height: 150px;
   position: fixed;
-  z-index: 2;
+  z-index: 3;
 }
 
 /* ヘッダー */
@@ -89,7 +89,9 @@ header{
   padding: 5px;
   opacity: 1;
   position: absolute;
-  z-index: 3;
+}
+.accshow {
+  z-index: 4;
 }
 
 /* サイズメニュー */

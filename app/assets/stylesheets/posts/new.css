@@ -5,10 +5,14 @@
   margin-top: 150px;
   padding: 20px;
 }
-
-.post-form .title {
-  text-align: center;
+.edit-form {
+  background-color:bisque;
+  width: 100vw;
+  height: 100vh;
+  margin-top: 175px;
+  padding: 20px;
 }
+
 .form {
   background-color: white;
   width: 50vw;

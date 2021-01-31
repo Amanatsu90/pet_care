@@ -6,7 +6,7 @@
   margin-top: 150px;
   padding-left: 1em;
   position: fixed;
-  /* z-index: 2; */
+  z-index: 2;
 }
 
 .article-show {

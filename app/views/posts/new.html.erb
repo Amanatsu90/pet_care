@@ -1,8 +1,6 @@
-<%# <%= render "shared/header" %>
-
 <div class="post-form">
   <div class="title"><p>投稿フォーム</p></div>
-  
+
   <div class="form">
     <%= form_with(model: @post, local: true) do |f| %>
       <%= render 'shared/error_messages', model: f.object %>

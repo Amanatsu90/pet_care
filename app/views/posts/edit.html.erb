@@ -1,8 +1,7 @@
-<%# <%= render "shared/header" %>
 <% breadcrumb :edit_post, @post %>
 
-<div class="post-form">
-  <h2 class="title">編集フォーム</h2>
+<div class="edit-form">
+  <div class="title"><p>編集フォーム</p></div>
 
   <div class="form">
     <%= form_with(model: @post, local: true) do |f| %>
