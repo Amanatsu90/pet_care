@@ -1,8 +1,7 @@
-
 <div class="main">
 
   <div class="main-body">
-    <div class="title"><h1>お気に入り一覧</h1></div>
+    <div class="title"><p>お気に入り一覧</p></div>
     <div class="lists">
       <% @posts.each do |post| %>
         <div class="article">
@@ -23,9 +22,10 @@
         </div>
       <% end %>
     </div>
+    <div class="back">
+      <%= link_to "戻る", :back, class: "back_btn" %>
+    </div>
   </div>
-
-  <%= link_to "戻る", :back, class: "back_btn" %>
 </div>
 
-<%= render "shared/footer" %>
+<%# <%= render "shared/footer" %>
