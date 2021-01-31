@@ -148,7 +148,8 @@ li {
 }
 
  /* 戻るボタン */
- .back_btn {
+ .back_btn,
+ .login-btn {
   position: relative;
   display: inline-block;
   padding: 0.3em 1em;
