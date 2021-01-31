@@ -1,8 +1,7 @@
-<%# <%= render "shared/header" %>
 <% breadcrumb :edit_user, @user %>
 
-<div class="user_form">
-  <h2 class="title">アカウント情報の変更</h2>
+<div class="edit-form">
+  <div class="title"><p>アカウント情報の変更</p></div>
 
   <div class="form">
     <%= form_with model: current_user, local: true do |f| %>
