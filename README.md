@@ -38,7 +38,7 @@ https://pet-care01.herokuapp.com/
 
 # 使用技術（開発環境）
 ### バックエンド
-Ruby、Ruby on Rails
+Ruby、Ruby on Rails（6.0.0）
 ### フロントエンド
 HTML、CSS
 ### データベース
