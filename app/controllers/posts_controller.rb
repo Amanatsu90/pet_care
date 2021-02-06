@@ -1,17 +1,17 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: %i[index show]
+  before_action :set_post, only: %i[show edit update destroy]
 
   def index
-    if params[:theme_id]
-      @posts = Post.where(theme_id: params[:theme_id])
-    elsif params[:dog_size_id]
-      @posts = Post.where(dog_size_id: params[:dog_size_id])
-    elsif params[:tag_name]
-      @posts = Post.tagged_with("#{params[:tag_name]}").all
-    else
-      @posts = Post.order(created_at: :DESC)
-    end
+    @posts = if params[:theme_id]
+               Post.where(theme_id: params[:theme_id])
+             elsif params[:dog_size_id]
+               Post.where(dog_size_id: params[:dog_size_id])
+             elsif params[:tag_name]
+               Post.tagged_with(params[:tag_name].to_s).all
+             else
+               Post.order(created_at: :DESC)
+             end
   end
 
   def new
@@ -64,7 +64,8 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :text, :dog_size_id, :theme_id, :image, :tag_list).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :text, :dog_size_id, :theme_id, :image,
+                                 :tag_list).merge(user_id: current_user.id)
   end
 
   def set_post

@@ -1,5 +1,5 @@
 crumb :root do
-  link "Home", root_path
+  link 'Home', root_path
 end
 
 crumb :user do |user|
@@ -8,7 +8,7 @@ crumb :user do |user|
 end
 
 crumb :edit_user do |user|
-  link "編集", edit_user_registration_path
+  link '編集', edit_user_registration_path
   parent :user, user
 end
 
@@ -18,7 +18,7 @@ crumb :post do |post|
 end
 
 crumb :edit_post do |post|
-  link "編集", edit_post_path
+  link '編集', edit_post_path
   parent :post, post
 end
 

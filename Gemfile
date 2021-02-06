@@ -58,12 +58,12 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'active_hash'
+gem 'acts-as-taggable-on', '~> 6.0'
+gem 'aws-sdk-s3', require: false
 gem 'devise'
+gem 'font-awesome-rails'
+gem 'gretel'
 gem 'image_processing', '~> 1.2'
 gem 'mini_magick'
 gem 'pry-rails'
 gem 'rails-i18n'
-gem 'acts-as-taggable-on', '~> 6.0'
-gem "gretel"
-gem 'font-awesome-rails'
-gem "aws-sdk-s3", require: false

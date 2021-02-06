@@ -3,11 +3,11 @@ Rails.application.routes.draw do
   root to: 'posts#index'
   resources :posts do
     resources :comments, only: :create
-    resources :favorites, only: [:create, :destroy]
+    resources :favorites, only: %i[create destroy]
     collection do
       get 'search'
       get 'favorites'
     end
   end
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: %i[show edit update]
 end
