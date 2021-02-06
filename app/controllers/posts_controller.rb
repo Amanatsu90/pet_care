@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     elsif params[:dog_size_id]
       @posts = Post.where(dog_size_id: params[:dog_size_id])
     elsif params[:tag_name]
-      @posts = Post.tagged_with("#{params[:tag_name]}")
+      @posts = Post.tagged_with("#{params[:tag_name]}").all
     else
       @posts = Post.order(created_at: :DESC)
     end

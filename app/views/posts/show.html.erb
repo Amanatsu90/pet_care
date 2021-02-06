@@ -38,7 +38,7 @@
       <div class="article_tag">
         <b>タグ：</b>
         <% @post.tag_list.each do |tag| %>
-          <%= link_to tag, post_path(tag_name: tag) %>
+          <%= link_to tag, posts_path(tag_name: tag) %>
         <% end %>
       </div>
     </div>
