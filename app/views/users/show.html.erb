@@ -22,14 +22,14 @@
         <% end %>
       </div>
     <% end %>
-  </div>
 
-  <div class="account_edit">
-    <% if user_signed_in? && current_user.id == @user.id %>
-      <%= link_to 'アカウント情報の変更', edit_user_path(current_user), class: "user_edit_btn" %>
-      <%= link_to 'Passwordの変更', edit_user_registration_path, class: "password_edit" %>
-      <%= button_to "アカウントの削除", registration_path(current_user), data: { confirm: "削除してよろしいですか?" }, method: :delete, class: "user_delete_btn" %>
-    <% end %>
+    <div class="account_edit">
+      <% if user_signed_in? && current_user.id == @user.id %>
+        <%= link_to 'アカウント情報の変更', edit_user_path(current_user), class: "user_edit_btn" %>
+        <%= link_to 'Passwordの変更', edit_user_registration_path, class: "password_edit" %>
+        <%= button_to "アカウントの削除", registration_path(current_user), data: { confirm: "削除してよろしいですか?" }, method: :delete, class: "user_delete_btn" %>
+      <% end %>
+    </div>
   </div>
 
   <div class="back"><%= link_to "戻る", :back, class: "back_btn" %></div>
