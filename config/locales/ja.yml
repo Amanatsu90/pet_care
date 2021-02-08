@@ -32,6 +32,8 @@ ja:
         theme_id: テーマ
         dog_size_id: 愛犬のサイズ
         text: 本文
+      comment:
+        text: テキスト
     models:
       user: ユーザー
   devise:

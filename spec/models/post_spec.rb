@@ -38,5 +38,11 @@ RSpec.describe Post, type: :model do
       @post.valid?
       expect(@post.errors.full_messages).to include('本文を入力してください')
     end
+
+    it 'ユーザーが紐付いていないと保存不可' do
+      @post.user = nil
+      @post.valid?
+      expect(@post.errors.full_messages).to include('Userを入力してください')
+    end
   end
 end
