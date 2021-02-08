@@ -27,6 +27,13 @@ ja:
         updated_at: 更新日
         nickname: ニックネーム
         name: 名前
+      post:
+        title: タイトル
+        theme_id: テーマ
+        dog_size_id: 愛犬のサイズ
+        text: 本文
+      comment:
+        text: テキスト
     models:
       user: ユーザー
   devise:
