@@ -12,9 +12,7 @@
             <%= image_tag post.image.variant(resize: '200x200'), class: "img" if post.image.attached? %>
           </div>
           <div class="article_info">
-            <div class="article_title">
-              <%= post.title %>
-            </div>
+            <div class="article_title"><%= post.title %></div>
             <div class="article_theme"><%= post.theme.name %></div>
             <div class="article_time"><%= post.updated_at %></div>
           </div>
